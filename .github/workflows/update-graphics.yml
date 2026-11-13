@@ -1,0 +1,55 @@
+name: Update profile graphics
+
+on:
+  schedule:
+    - cron: '17 4 * * *' # daily, early morning in Germany
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/**', 'package.json', '.github/workflows/update-graphics.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-graphics
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    env:
+      # Personal access token that can read my private repositories (commit counts only).
+      # Without it the graphics are re-rendered from the last stored counts.
+      CONTRIB_TOKEN: ${{ secrets.CONTRIB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Render with fresh commit counts
+        if: env.CONTRIB_TOKEN != ''
+        env:
+          GH_TOKEN: ${{ secrets.CONTRIB_TOKEN }}
+        run: node scripts/render.mjs --fetch
+
+      - name: Render from stored counts
+        if: env.CONTRIB_TOKEN == ''
+        run: node scripts/render.mjs
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets data
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git commit -m "Update profile graphics"
+            git push
+          fi

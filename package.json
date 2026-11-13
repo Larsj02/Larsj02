@@ -1,0 +1,13 @@
+{
+  "name": "larsj02-profile",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "node scripts/render.mjs",
+    "render:fetch": "node scripts/render.mjs --fetch"
+  },
+  "devDependencies": {
+    "@fontsource/plus-jakarta-sans": "^5.0.0",
+    "@fontsource/space-mono": "^5.0.0"
+  }
+}
