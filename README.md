@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/header.png" width="846" alt="Lars Johnen – software developer from Siegen, Germany. Also known as Larsj02, onlylars and Rasu.">
+  <img src="assets/header.png" width="846" alt="Lars Johnen – software developer from Siegen, Germany">
 </p>
 
 I have been programming since 2014, mostly self-taught, and I like building tools that other people actually use: World of Warcraft addons with more than a million downloads, and web applications for small businesses.
@@ -28,8 +28,16 @@ Most of my work lives in private repositories, so here is the full picture:
 
 ## What I work with
 
-**Web:** TypeScript, Vue, Node.js, PHP (Symfony), SQL, Appwrite, Docker, Linux<br>
-**Games:** Lua, the WoW addon API, WeakAuras, Java
+| | |
+|---|---|
+| **Languages** | TypeScript, JavaScript (ES6+), PHP 7.4–8.5, Lua, Python, Java, Kotlin, C#, C++, Rust, SQL |
+| **Frontend** | Vue.js, Nuxt.js, Next.js, AngularJS, Tailwind CSS, SCSS, HTML5, CSS3, Vite, Tauri |
+| **Backend** | Node.js, Symfony, Laravel, Doctrine ORM, REST APIs, WebSockets, PHPStan |
+| **Data** | MariaDB, MySQL, MSSQL, MongoDB, Appwrite, Supabase |
+| **Ops** | Docker, Podman, Ubuntu Linux, Git, GitLab CI/CD, GitHub Actions, Tailscale, Fail2ban, self-hosting |
+| **Games** | the WoW addon API, WeakAuras |
+
+Earlier in life: Visual Basic.
 
 ## Elsewhere
 

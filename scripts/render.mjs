@@ -97,16 +97,13 @@ const header = page(210, `
       <h1>Lars Johnen</h1>
       <p>Software developer from Siegen, Germany</p>
     </div>
-    <div class="aka"><span>Larsj02</span><span>onlylars</span><span>Rasu</span></div>
   </div>`, `
   .card{position:absolute;inset:0;${card};overflow:hidden}
   .glow{position:absolute;right:-60px;top:-140px;width:420px;height:420px;border-radius:58% 42% 47% 53% / 46% 52% 48% 54%;background:linear-gradient(135deg,rgba(56,189,248,.5),rgba(20,184,166,.6));filter:blur(70px);opacity:.55}
   .wave{position:absolute;inset:0;width:100%;height:100%}
   .text{position:absolute;left:40px;top:38px}
   h1{font-size:52px;font-weight:800;letter-spacing:-.03em;line-height:1}
-  p{font-size:20px;font-weight:500;color:#CBD5E1;margin-top:12px}
-  .aka{position:absolute;right:32px;top:26px;display:flex;flex-direction:column;gap:7px;align-items:flex-end}
-  .aka span{font-family:'SM',monospace;font-size:14px;color:#E2E8F0;background:rgba(6,9,19,.55);border:1.5px solid rgba(255,255,255,.16);padding:5px 14px;border-radius:999px}`)
+  p{font-size:20px;font-weight:500;color:#CBD5E1;margin-top:12px}`)
 
 const stat = (value, label) => `<div class="tile"><b>${value}</b><span>${label}</span></div>`
 const stats = page(124, `
